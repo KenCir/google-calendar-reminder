@@ -1,3 +1,5 @@
+import { URLSearchParams, URL } from 'node:url';
+
 const TIME_ZONE = 'Asia/Tokyo';
 const EXCLUDED_CALENDAR_SUMMARY = '日本の祝日';
 const LAST_MESSAGE_ID_KEY = 'discord:last-message-id';
@@ -16,9 +18,9 @@ type CalendarListEntry = {
 };
 
 type CalendarListResponse = {
+	error?: unknown;
 	items?: CalendarListEntry[];
 	nextPageToken?: string;
-	error?: unknown;
 };
 
 type CalendarEventDate = {
@@ -27,25 +29,25 @@ type CalendarEventDate = {
 };
 
 type CalendarEvent = {
-	id?: string;
-	summary?: string;
-	start?: CalendarEventDate;
 	end?: CalendarEventDate;
+	id?: string;
+	start?: CalendarEventDate;
+	summary?: string;
 };
 
 type EventsResponse = {
+	error?: unknown;
 	items?: CalendarEvent[];
 	nextPageToken?: string;
-	error?: unknown;
 };
 
 type ReminderEvent = {
-	title: string;
 	allDay: boolean;
-	startTimeMs: number;
-	startLabel?: string;
 	endLabel?: string;
 	sequence: number;
+	startLabel?: string;
+	startTimeMs: number;
+	title: string;
 };
 
 type DiscordMessageResponse = {
@@ -74,10 +76,11 @@ function requireEnv(value: string | undefined, name: string): string {
 	if (!value) {
 		throw new Error(`Missing required environment value: ${name}`);
 	}
+
 	return value;
 }
 
-function getTokyoDateParts(date: Date): { year: number; month: number; day: number } {
+function getTokyoDateParts(date: Date): { day: number; month: number; year: number } {
 	const parts = new Intl.DateTimeFormat('en-US', {
 		timeZone: TIME_ZONE,
 		year: 'numeric',
@@ -102,7 +105,7 @@ function formatTokyoDateTime(year: number, month: number, day: number, hour: num
 	return `${year}-${pad2(month)}-${pad2(day)}T${pad2(hour)}:${pad2(minute)}:${pad2(second)}+09:00`;
 }
 
-function getTokyoDayRange(now: Date): { timeMin: string; timeMax: string } {
+function getTokyoDayRange(now: Date): { timeMax: string; timeMin: string } {
 	const today = getTokyoDateParts(now);
 	const nextDayDate = new Date(Date.UTC(today.year, today.month - 1, today.day + 1));
 	const nextDay = {
@@ -215,26 +218,13 @@ function selectTargetCalendars(calendars: CalendarListEntry[], env: WorkerEnv): 
 	if (configuredIds) {
 		const calendarsById = new Map(calendars.map((calendar) => [calendar.id, calendar]));
 
-		return configuredIds
-			.map((id) => calendarsById.get(id) ?? { id })
-			.filter((calendar) => calendar.summary !== EXCLUDED_CALENDAR_SUMMARY);
+		return configuredIds.map((id) => calendarsById.get(id) ?? { id }).filter((calendar) => calendar.summary !== EXCLUDED_CALENDAR_SUMMARY);
 	}
 
-	return calendars.filter((calendar) => {
-		if (calendar.summary === EXCLUDED_CALENDAR_SUMMARY) {
-			return false;
-		}
-
-		return true;
-	});
+	return calendars.filter((calendar) => calendar.summary !== EXCLUDED_CALENDAR_SUMMARY);
 }
 
-async function listEventsForCalendar(
-	accessToken: string,
-	calendarId: string,
-	timeMin: string,
-	timeMax: string,
-): Promise<CalendarEvent[]> {
+async function listEventsForCalendar(accessToken: string, calendarId: string, timeMin: string, timeMax: string): Promise<CalendarEvent[]> {
 	const events: CalendarEvent[] = [];
 	let pageToken: string | undefined;
 
@@ -259,7 +249,7 @@ function toReminderEvent(event: CalendarEvent, sequence: number): ReminderEvent 
 		return undefined;
 	}
 
-	const title = event.summary || '(無題)';
+	const title = event.summary ?? '(無題)';
 
 	if (event.start.date) {
 		return {
