@@ -1,5 +1,5 @@
 {
-	"name": "google-daily-reminder",
+	"name": "google-calendar-reminder",
 	"main": "src/index.ts",
 	"compatibility_date": "2026-06-08",
 	"observability": {
