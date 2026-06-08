@@ -1,0 +1,19 @@
+{
+	"name": "google-daily-reminder",
+	"main": "src/index.ts",
+	"compatibility_date": "2026-06-08",
+	"observability": {
+		"enabled": true,
+	},
+	"kv_namespaces": [
+		{
+			"binding": "REMINDER_STATE",
+			"id": "465f53e97373410ba9e4a19dbcc7b1e7",
+		},
+	],
+	"triggers": {
+		"crons": ["0 15 * * *"],
+	},
+	"workers_dev": false,
+	"preview_urls": false,
+}
