@@ -6,10 +6,18 @@
 		"deploy": "wrangler deploy",
 		"dev": "wrangler dev --test-scheduled",
 		"start": "wrangler dev --test-scheduled",
-		"cf-typegen": "wrangler types"
+		"cf-typegen": "wrangler types",
+		"lint": "prettier --check . && eslint --ext .ts --format=pretty src",
+		"format": "prettier --write . && eslint --ext .ts --fix --format=pretty src"
 	},
 	"devDependencies": {
 		"@cloudflare/workers-types": "^4.20260607.1",
+		"@types/node": "^25.9.2",
+		"eslint": "^10.4.1",
+		"eslint-config-neon": "^0.5.1",
+		"eslint-formatter-compact": "^9.0.1",
+		"eslint-formatter-pretty": "^7.1.0",
+		"prettier": "^3.8.3",
 		"typescript": "^6.0.3",
 		"wrangler": "^4.98.0"
 	}
