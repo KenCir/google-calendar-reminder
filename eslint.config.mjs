@@ -20,6 +20,8 @@ const config = [
 		rules: {
 			'no-restricted-globals': 0,
 			'import/extensions': 0,
+			'n/prefer-global/url': 0,
+			'n/prefer-global/url-search-params': 0,
 		},
 	},
 ];

@@ -1,5 +1,3 @@
-import { URLSearchParams, URL } from 'node:url';
-
 const TIME_ZONE = 'Asia/Tokyo';
 const EXCLUDED_CALENDAR_SUMMARY = '日本の祝日';
 const LAST_MESSAGE_ID_KEY = 'discord:last-message-id';
