@@ -4,7 +4,7 @@
 	"rangeStrategy": "bump",
 	"labels": ["Type: Dependencies"],
 	"prHourlyLimit": 5,
-	"minimumReleaseAge": "1 day",
+	"minimumReleaseAge": "3 days",
 	"packageRules": [
 		{
 			"matchManagers": ["npm"],
