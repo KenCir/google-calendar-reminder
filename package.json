@@ -12,12 +12,12 @@
 	},
 	"devDependencies": {
 		"@cloudflare/workers-types": "^4.20260624.1",
-		"@types/node": "^25.9.2",
+		"@types/node": "^25.9.4",
 		"eslint": "^10.5.0",
-		"eslint-config-neon": "^0.5.1",
+		"eslint-config-neon": "^0.5.4",
 		"eslint-formatter-compact": "^9.0.1",
 		"eslint-formatter-pretty": "^7.1.0",
-		"prettier": "^3.8.3",
+		"prettier": "^3.8.4",
 		"typescript": "^6.0.3",
 		"wrangler": "^4.104.0"
 	}
