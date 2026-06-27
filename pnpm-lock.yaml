@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@cloudflare/workers-types':
-        specifier: ^4.20260607.1
-        version: 4.20260607.1
+        specifier: ^4.20260624.1
+        version: 4.20260626.1
       '@types/node':
         specifier: ^25.9.2
         version: 25.9.2
@@ -34,7 +34,7 @@ importers:
         version: 6.0.3
       wrangler:
         specifier: ^4.98.0
-        version: 4.98.0(@cloudflare/workers-types@4.20260607.1)
+        version: 4.98.0(@cloudflare/workers-types@4.20260626.1)
 
 packages:
 
@@ -183,8 +183,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@cloudflare/workers-types@4.20260607.1':
-    resolution: {integrity: sha512-TSiusluJ8+5esTMYwxGFuT1SNU/PRzPmt9VMsmAlzjIK0mhc24Zsc1bbGEVH5qyMZ8hrdRtrAPdt2+T8Vph2+Q==}
+  '@cloudflare/workers-types@4.20260626.1':
+    resolution: {integrity: sha512-fBnpQyFRS3Ce1l2IUd3k+aUxgy/7VMlVXF4F672/eSrpXFeezCy3Ha6Z2uTyGgqu9sGvQPOj8nqKBv2yeI+ciw==}
 
   '@cspotcode/source-map-support@0.8.1':
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
@@ -3231,7 +3231,7 @@ snapshots:
   '@cloudflare/workerd-windows-64@1.20260603.1':
     optional: true
 
-  '@cloudflare/workers-types@4.20260607.1': {}
+  '@cloudflare/workers-types@4.20260626.1': {}
 
   '@cspotcode/source-map-support@0.8.1':
     dependencies:
@@ -6604,7 +6604,7 @@ snapshots:
       '@cloudflare/workerd-linux-arm64': 1.20260603.1
       '@cloudflare/workerd-windows-64': 1.20260603.1
 
-  wrangler@4.98.0(@cloudflare/workers-types@4.20260607.1):
+  wrangler@4.98.0(@cloudflare/workers-types@4.20260626.1):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.5.0
       '@cloudflare/unenv-preset': 2.16.1(unenv@2.0.0-rc.24)(workerd@1.20260603.1)
@@ -6615,7 +6615,7 @@ snapshots:
       unenv: 2.0.0-rc.24
       workerd: 1.20260603.1
     optionalDependencies:
-      '@cloudflare/workers-types': 4.20260607.1
+      '@cloudflare/workers-types': 4.20260626.1
       fsevents: 2.3.3
     transitivePeerDependencies:
       - bufferutil
