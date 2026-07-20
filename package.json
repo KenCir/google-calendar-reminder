@@ -11,7 +11,7 @@
 		"format": "prettier --write . && eslint --ext .ts --fix --format=pretty src"
 	},
 	"devDependencies": {
-		"@cloudflare/workers-types": "^4.20260624.1",
+		"@cloudflare/workers-types": "^4.20260702.1",
 		"@types/node": "^25.9.5",
 		"eslint": "^10.5.0",
 		"eslint-config-neon": "^0.5.4",
