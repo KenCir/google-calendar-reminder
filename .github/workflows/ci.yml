@@ -29,7 +29,7 @@ jobs:
       - name: Use Node.js 24
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
-          node-version: '24.18.0'
+          node-version: '24.20.0'
           cache: 'pnpm'
       - name: Install build tools
         run: sudo apt-get install -y python3 make g++ && npm install -g node-gyp
