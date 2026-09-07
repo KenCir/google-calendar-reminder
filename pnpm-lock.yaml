@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@cloudflare/workers-types':
-        specifier: ^5.20260717.1
-        version: 5.20260719.1
+        specifier: ^5.20260904.1
+        version: 5.20260906.1
       '@types/node':
         specifier: ^25.9.5
         version: 25.9.5
@@ -34,7 +34,7 @@ importers:
         version: 6.0.3
       wrangler:
         specifier: ^4.104.0
-        version: 4.105.0(@cloudflare/workers-types@5.20260719.1)
+        version: 4.105.0(@cloudflare/workers-types@5.20260906.1)
 
 packages:
 
@@ -183,8 +183,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@cloudflare/workers-types@5.20260719.1':
-    resolution: {integrity: sha512-DcGasbfUuczQilc80vhL2MPPdWcaxWkx0hN5IW9UdNDBdrRvWcal3akSJ6Ccm7e8+/OGeR+8tYrqkykA3YGSZw==}
+  '@cloudflare/workers-types@5.20260906.1':
+    resolution: {integrity: sha512-mRKC5n+9OP7tZiOu7vMv2MZ+Arh3tX4b9gVAt43WFns83LNzWchhfRs9o2IkFCnYKovHo4m4Af1P4zPQWdLx0g==}
 
   '@cspotcode/source-map-support@0.8.1':
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
@@ -3274,7 +3274,7 @@ snapshots:
   '@cloudflare/workerd-windows-64@1.20260625.1':
     optional: true
 
-  '@cloudflare/workers-types@5.20260719.1': {}
+  '@cloudflare/workers-types@5.20260906.1': {}
 
   '@cspotcode/source-map-support@0.8.1':
     dependencies:
@@ -6702,7 +6702,7 @@ snapshots:
       '@cloudflare/workerd-linux-arm64': 1.20260625.1
       '@cloudflare/workerd-windows-64': 1.20260625.1
 
-  wrangler@4.105.0(@cloudflare/workers-types@5.20260719.1):
+  wrangler@4.105.0(@cloudflare/workers-types@5.20260906.1):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.5.0
       '@cloudflare/unenv-preset': 2.16.1(unenv@2.0.0-rc.24)(workerd@1.20260625.1)
@@ -6713,7 +6713,7 @@ snapshots:
       unenv: 2.0.0-rc.24
       workerd: 1.20260625.1
     optionalDependencies:
-      '@cloudflare/workers-types': 5.20260719.1
+      '@cloudflare/workers-types': 5.20260906.1
       fsevents: 2.3.3
     transitivePeerDependencies:
       - bufferutil
