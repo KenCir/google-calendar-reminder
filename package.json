@@ -13,7 +13,7 @@
 	"devDependencies": {
 		"@cloudflare/workers-types": "^5.20261030.1",
 		"@types/node": "^26.6.6",
-		"eslint": "^10.13.0",
+		"eslint": "^10.14.0",
 		"eslint-config-neon": "^0.5.4",
 		"eslint-formatter-compact": "^9.0.1",
 		"eslint-formatter-pretty": "^7.1.0",
