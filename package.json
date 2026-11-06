@@ -19,6 +19,6 @@
 		"eslint-formatter-pretty": "^7.1.0",
 		"prettier": "^3.9.10",
 		"typescript": "^6.0.3",
-		"wrangler": "^4.156.0"
+		"wrangler": "^4.157.0"
 	}
 }
